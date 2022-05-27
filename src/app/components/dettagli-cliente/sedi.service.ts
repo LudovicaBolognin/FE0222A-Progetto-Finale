@@ -34,16 +34,12 @@ urlDB = environment.pathApi;
   }
 
 
-  //prova
+  //senza parametro
   getComuni() {
-    return this.http.get<any>(
-      `${this.urlDB}/api/comuni?page=0&size=20&sort=id,ASC`
-    );
+    return this.http.get<any>(`${this.urlDB}/api/comuni?page=0&size=20&sort=id,ASC`);
   }
 
   getProvince() {
-    return this.http.get<any>(
-      `${this.urlDB}/api/province?page=0&size=20&sort=id,ASC`
-    );
+    return this.http.get<any>(`${this.urlDB}/api/province?page=0&size=20&sort=id,ASC`);
   }
 }

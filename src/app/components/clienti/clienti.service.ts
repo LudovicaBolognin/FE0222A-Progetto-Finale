@@ -25,10 +25,6 @@ export class ClientiService {
       `${this.urlDb}/api/fatture/cliente/${id}?page=0&size=200&sort=id,ASC`);
   }
 
-  creaFattura(data: any) {
-    return this.http.post<any>(`${this.urlDb}/api/fatture`, data);
-  }
-
   deleteFatture(id: number) {
     return this.http.delete(`${this.urlDb}/api/fatture/cliente/${id}`);
   }
@@ -43,10 +39,7 @@ export class ClientiService {
   }
 
   creaNuovoCliente(data: any) {
-    return this.http.post(
-      `${this.urlDb}/api/clienti/tipicliente`,
-      data
-    );
+    return this.http.post(`${this.urlDb}/api/clienti/tipicliente`, data);
   }
 
   //modifica utente in clienti-modifica
@@ -55,16 +48,12 @@ export class ClientiService {
   }
 
   editCliente(data: Partial<Cliente>, id: number) {
-    return this.http
-      .put<Cliente>(`${this.urlDb}/api/clienti/${id}`, data)
-      .subscribe((res) => {});
+    return this.http.put<Cliente>(`${this.urlDb}/api/clienti/${id}`, data).subscribe((res) => {});
   }
 
   //dettagli fattura cliente
   getFattureByCliente(id: number, p: number) {
-    return this.http.get(
-      `${environment.pathApi}/api/fatture/cliente/${id}?page=${p}&size=20&sort=id,ASC`
-    );
+    return this.http.get(`${environment.pathApi}/api/fatture/cliente/${id}?page=${p}&size=20&sort=id,ASC`);
   }
 
   // nuova fattura
