@@ -26,20 +26,8 @@
     </div>
   </div>
 
-  <!-- <nav aria-label="...">
-    <ul class="pagination">
-        <li class="page-item">
-            <button (click)="precedente()" [disabled]="paginaCorr==0" class="btn btn-primary">Precedente</button>
-
-        </li>
-        <li class="page-item">
-            <button (click)="successivo()" [disabled]="paginaCorr==pagineTotale - 1" class="btn btn-primary">Successiva</button>
-        </li>
-    </ul>
-  </nav> -->
-
   <nav aria-label="Page navigation example" class="container">
-    <button class="btn btn-primary mb-5" [routerLink]="'/signup'">Registra un nuovo utente</button>
+    <button class="btn btn-secondary mb-5" [routerLink]="'/signup'">Registra un nuovo utente</button>
     <ul class="pagination">
       <li class="page-item"><a class="page-link" (click)="precedente()">Precedente</a></li>
       <li *ngFor="let pag of numP; let p = index" class="page-item"><a class="page-link" (click)="cambiaPag(p)">{{p + 1}}</a></li>

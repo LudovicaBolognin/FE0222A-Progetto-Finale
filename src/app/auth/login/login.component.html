@@ -1,24 +1,26 @@
 <!-- <p>login works!</p> -->
-<div class="container mx-auto my-5 py-5 text-center justify-content-center">
-  <h2 class="title text-center my-5">Login</h2>
-  <form #form="ngForm" (ngSubmit)="accedi(form)">
-    <div class="form-group">
-      <label for="username">Username</label>
-              <input ngModel required name="username" class="form-control" type="text" id="username"/>
-    </div>
-    <div class="form-group">
-      <label for="pass">Password</label>
-      <input name="password" required class="form-control" ngModel id="pass" type="password"/>
-    </div>
-    <button type="submit" [disabled]="form.invalid" class="btn btn-secondary mt-4">Accedi</button>
-  </form>
-  <div class="mt-3 text-center">
-    <span>se non sei ancora registrato, vai a
-      <a [routerLink]="['/signup']"
-        routerLinkActive="active"
-        class="reg"
-        >Signup</a
-      ></span
-    >
+<div class="container m-auto py-5 text-center justify-content-center">
+  <h2 class="title text-center my-5 pt-5">Login</h2>
+  <div class="row row-cols-1 row-cols-lg-2 m-2 justify-content-center">
+    <form #form="ngForm" (ngSubmit)="accedi(form)">
+      <div class="form-group">
+        <label for="username">Username:</label>
+                <input ngModel required name="username" class="form-control" type="text" id="username"/>
+      </div>
+      <div class="form-group">
+        <label for="pass">Password:</label>
+        <input name="password" required class="form-control" ngModel id="pass" type="password"/>
+      </div>
+      <button type="submit" [disabled]="form.invalid" class="btn btn-secondary mt-4">Accedi</button>
+      <div class="mt-3 text-center">
+        <span>se non sei ancora registrato, vai a
+          <a [routerLink]="['/signup']"
+            routerLinkActive="active"
+            class="reg"
+            >Signup</a
+          ></span>
+      </div>
+    </form>
   </div>
+
 </div>
