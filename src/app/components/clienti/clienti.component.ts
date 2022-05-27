@@ -55,8 +55,6 @@ export class ClientiComponent implements OnInit {
 
   async eliminaCliente(idCliente: number, i: number) {
     this.idClient = idCliente;
-    /* let id = this.pagCorr * 20 + this.idClient;
-    console.log(id); */
     await this.srvClienti.deleteFatture(idCliente).toPromise();
     this.srvClienti.delete(idCliente).subscribe((c) => {
       this.router.navigate(['/clienti']);
