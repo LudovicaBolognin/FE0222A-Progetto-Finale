@@ -1,7 +1,7 @@
 <div class="container my-5 py-5">
   <h1 class="text-center my-5">Lista fatture</h1>
-  <table class="table">
-    <thead>
+  <table class="table table-striped">
+    <thead class="table-dark fs-5">
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Data</th>
@@ -9,7 +9,7 @@
         <th scope="col">Anno</th>
         <th scope="col">Importo</th>
         <th scope="col">Stato</th>
-        <th scope="col">Cliente</th>
+        <th scope="col" colspan="3">Cliente</th>
       </tr>
     </thead>
     <tbody *ngFor="let fattura of fatture; let i = index">
@@ -22,11 +22,11 @@
         <td>{{ fattura.stato.nome }}</td>
         <td>{{ fattura.cliente.ragioneSociale }}</td>
         <td>
-          <a
+          <button
             class="btn btn-warning"
             [routerLink]="['/fatture-dettagli/', fattura.id]"
             routerLinkActive="active"
-            >Modifica</a
+            >Modifica</button
           >
         </td>
         <td>

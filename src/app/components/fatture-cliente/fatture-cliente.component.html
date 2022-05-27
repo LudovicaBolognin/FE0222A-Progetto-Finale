@@ -1,8 +1,8 @@
 <!-- <p>fatture-cliente works!</p> -->
-<div class="container my-5">
-  <h1 class="text-center my-4">Lista fatture del cliente</h1>
-  <table class="table">
-    <thead>
+<div class="container my-5 py-5">
+  <h1 class="text-center my-5">Lista fatture cliente</h1>
+  <table class="table table-striped">
+    <thead class="table-dark fs-5">
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Data</th>
@@ -13,11 +13,10 @@
         <th scope="col">Cliente</th>
         <th scope="col" colspan="2" class="text-end">
           <a
-            class="btn btn-primary"
+            class="btn btn-secondary"
             [routerLink]="['/nuova-fattura', id]"
             routerLinkActive="active"
-            >Nuova Fattura</a
-          >
+            >Nuova Fattura</a>
         </th>
       </tr>
     </thead>
