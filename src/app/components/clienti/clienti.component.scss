@@ -1,8 +1,25 @@
 #pagination a {
   color: orange !important;
   background-color: black;
+  box-shadow: 2px 2px 2px grey;
 }
 #pagination a:hover {
   background-color: grey;
   color: white !important;
+}
+
+tr:hover {
+  background-color: rgba(255, 166, 0, 0.315);
+}
+
+thead {
+  color: orange;
+}
+
+thead a {
+  box-shadow: 2px 2px 2px grey;
+}
+
+thead a:hover {
+  box-shadow: 2px 2px 2px 3px white;
 }

@@ -1,16 +1,16 @@
-<div id="scatola" class="row justify-content-center">
-  <div id="contenitore" class="p-2">
+<div class="container mt-5 pt-5">
+  <div  class="p-2 row row-cols-1 row-cols-lg-1 mx-5 justify-content-center">
     <div class="container p-5">
       <div class="row justify-content-center">
         <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
           {{errorMessage}}
         </div>
-        <form
+        <form class="mb-5"
           #form="ngForm"
           *ngIf="cliente"
           (ngSubmit)="onsubmit(form, cliente.id)"
         >
-        <h3 class="text-center">Modifica Cliente</h3>
+        <h3 class="text-center mb-5">Stai modificando il cliente con P.IVA: {{cliente.partitaIva}}</h3>
           <div class="form-group mb-2">
             <label for="ragioneSociale">Ragione Sociale</label>
             <input
@@ -146,7 +146,7 @@
               [(ngModel)]="cliente.indirizzoSedeOperativa.via"
               required
             />
-           <p id="label"> Civico:</p><input
+           <label for="Civico"> Civico:</label><input
               ngModel
               name="civicoSedeOperativa"
               class="form-control"
@@ -156,7 +156,7 @@
               [(ngModel)]="cliente.indirizzoSedeOperativa.civico"
               required
             />
-            <p id="label">CAP:</p><input
+            <label for="CAP">CAP:</label><input
               ngModel
               name="capSedeOperativa"
               class="form-control"
@@ -165,7 +165,7 @@
               [(ngModel)]="cliente.indirizzoSedeOperativa.cap"
               required
             />
-            <p id="label">Località:</p><input
+            <label for="Località">Località:</label><input
               ngModel
               name="localitaSedeOperativa"
               class="form-control"
@@ -210,7 +210,7 @@
           </div>
           <div class="text-center">
             <button
-              class="btn btn-primary mt-3"
+              class="btn btn-secondary m-5"
               [disabled]="form.invalid"
               [disabled]="isLoading"
               type="submit"
@@ -222,7 +222,7 @@
                 role="status"
                 aria-hidden="true"
               ></span>
-            </button>
+            </button> <button class="btn btn-secondary m-5" type="button" [routerLink]="['/clienti']">Torna indietro</button>
           </div>
         </form>
       </div>

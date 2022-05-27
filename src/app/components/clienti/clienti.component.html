@@ -1,16 +1,15 @@
 <!-- <p>clienti works!</p> -->
 <div class="container my-5 py-5">
   <h1 class="text-center my-5 justify-content-center">Lista clienti</h1>
-  <table class="table">
-    <thead>
+  <table class="table table-striped">
+    <thead class="table-dark fs-5">
       <tr>
         <th scope="col">Id</th>
         <th scope="col">Ragione sociale</th>
         <th scope="col">Email</th>
         <th scope="col">Partita Iva</th>
         <th scope="col" colspan="3" class="text-end">
-          <a
-            class="btn btn-secondary"
+          <a class="btn btn-secondary"
             [routerLink]="['/dettagli-cliente']"
             routerLinkActive="active"
             >Nuovo Cliente</a

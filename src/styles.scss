@@ -16,3 +16,14 @@ button {
 button:hover {
   box-shadow: 2px 2px 2px 3px white;
 }
+
+button.btn-info {
+  border: 1px solid grey;
+  background-color: black;
+  color: white;
+}
+
+button.btn-info:hover {
+  background-color: rgb(103, 99, 99);
+  border: 1px solid black;
+}

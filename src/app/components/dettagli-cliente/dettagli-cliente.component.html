@@ -1,43 +1,23 @@
-<div id="scatola" class="row justify-content-center">
-  <div id="contenitore" class="p-2">
+<div class="container mt-5 pt-5">
+  <div id="container" class="p-2 row row-cols-1 row-cols-lg-1 mx-5 justify-content-center">
     <div class="container p-5">
+      <h1 class="text-center mb-5">Nuovo Cliente</h1>
       <div class="row justify-content-center">
         <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
           {{errorMessage}}
         </div>
-        <form #form="ngForm" (ngSubmit)="onsubmit(form)">
-          <h3 class="text-center">Nuovo Cliente</h3>
+        <form #form="ngForm" (ngSubmit)="onsubmit(form)" class="mb-5">
           <div class="form-group mb-2">
-            <label for="ragioneSociale">Ragione Sociale</label>
-            <input
-              ngModel
-              name="ragioneSociale"
-              class="form-control"
-              type="text"
-              id="ragioneSociale"
-              required
-            />
+            <label for="ragioneSociale">Ragione Sociale:</label>
+            <input ngModel name="ragioneSociale" class="form-control" type="text" id="ragioneSociale" required/>
           </div>
           <div class="form-group mb-2">
-            <label for="partitaIva">Partita Iva</label>
-            <input
-              ngModel
-              name="partitaIva"
-              class="form-control"
-              type="text"
-              id="partitaIva"
-              required
-            />
+            <label for="partitaIva">Partita Iva:</label>
+            <input ngModel name="partitaIva" class="form-control" type="text" id="partitaIva" required/>
           </div>
           <div class="form-group mb-2">
-            <label for="tipoCliente">Tipo Cliente</label>
-            <select
-              ngModel
-              class="form-select"
-              id="tipoCliente"
-              name="tipoCliente"
-              required
-            >
+            <label for="tipoCliente">Tipo Cliente:</label>
+            <select ngModel class="form-select" id="tipoCliente" name="tipoCliente" required>
               <option selected value="SRL">SRL</option>
               <option selected value="SPA">SPA</option>
               <option selected value="SAS">SAS</option>
@@ -45,18 +25,11 @@
             </select>
           </div>
           <div class="form-group mb-2">
-            <label for="nomeContatto">Nome</label>
-            <input
-              ngModel
-              name="nomeContatto"
-              class="form-control"
-              type="text"
-              id="nomeContatto"
-              required
-            />
+            <label for="nomeContatto">Nome:</label>
+            <input ngModel name="nomeContatto" class="form-control" type="text" id="nomeContatto" required/>
           </div>
           <div class="form-group mb-2">
-            <label for="cognomeContatto">Cognome</label>
+            <label for="cognomeContatto">Cognome:</label>
             <input
               ngModel
               name="cognomeContatto"
@@ -67,7 +40,7 @@
             />
           </div>
           <div class="form-group mb-2">
-            <label for="emailContatto">Email Contatto</label>
+            <label for="emailContatto">Email Contatto:</label>
             <input
               ngModel
               name="emailContatto"
@@ -78,7 +51,7 @@
             />
           </div>
           <div class="form-group mb-2">
-            <label for="email">Email</label>
+            <label for="email">Email:</label>
             <input
               ngModel
               name="email"
@@ -89,7 +62,7 @@
             />
           </div>
           <div class="form-group mb-2">
-            <label for="pec">Pec</label>
+            <label for="pec">Pec:</label>
             <input
               ngModel
               name="pec"
@@ -100,7 +73,7 @@
             />
           </div>
           <div class="form-group mb-2">
-            <label for="telefono">Telefono</label>
+            <label for="telefono">Telefono:</label>
             <input
               ngModel
               name="telefono"
@@ -111,16 +84,15 @@
             />
           </div>
           <div class="form-group mb-2">
-            <label for="viaSedeOperativa">Indirizzo Sede Operativa</label>
-            <input
-              ngModel
+            <label for="viaSedeOperativa">Indirizzo Sede Operativa:</label>
+            <input ngModel
               name="viaSedeOperativa"
               class="form-control"
               type="text"
               id="viaSedeOperativa"
               required
             />
-            <p id="label">Civico:</p>
+            <label for="Civico">Civico:</label>
             <input
               ngModel
               name="civicoSedeOperativa"
@@ -129,7 +101,7 @@
               id="civicoSedeOperativa"
               required
             />
-            <p id="label">CAP:</p>
+            <label for="CAP">CAP:</label>
             <input
               ngModel
               name="capSedeOperativa"
@@ -138,7 +110,7 @@
               id="capSedeOperativa"
               required
             />
-            <p id="label">Località:</p>
+            <label for="Località">Località:</label>
             <input
               ngModel
               name="localitaSedeOperativa"
@@ -149,21 +121,20 @@
             />
           </div>
           <div class="form-group mb-2">
-            <label for="ComuneSedeOperativa">Comune</label>
+            <label for="ComuneSedeOperativa">Comune:</label>
             <select
               ngModel
               class="form-select"
               id="ComuneSedeOperativa"
               name="ComuneSedeOperativa"
-              required
-            >
+              required>
               <option *ngFor="let comune of comuni" value="{{comune.nome}}">
                 {{comune.nome}}
               </option>
             </select>
           </div>
           <div class="form-group mb-2">
-            <label for="provinciaSedeOperativa">Provincia</label>
+            <label for="provinciaSedeOperativa">Provincia:</label>
             <select
               ngModel
               class="form-select"
@@ -181,20 +152,14 @@
           </div>
 
           <div class="text-center">
-            <button
-              class="btn btn-primary mt-3"
-              [disabled]="form.invalid"
-              [disabled]="isLoading"
-              type="submit"
-            >
-              Inserisci Cliente
+            <button class="btn btn-secondary m-5" [disabled]="form.invalid" [disabled]="isLoading" type="submit">Inserisci Cliente
               <span
                 *ngIf="isLoading"
                 class="spinner-border spinner-border-sm"
                 role="status"
                 aria-hidden="true"
               ></span>
-            </button>
+            </button> <button class="btn btn-secondary m-5" type="button" [routerLink]="['/clienti']">Torna indietro</button>
           </div>
         </form>
       </div>
