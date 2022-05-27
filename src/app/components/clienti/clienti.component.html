@@ -1,0 +1,54 @@
+<!-- <p>clienti works!</p> -->
+<div class="container my-5 py-5">
+  <h1 class="text-center my-5">Lista clienti</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Ragione sociale</th>
+        <th scope="col">Email</th>
+        <th scope="col">Partita Iva</th>
+        <th scope="col" colspan="3" class="text-end">
+          <a
+            class="btn btn-primary"
+            [routerLink]="['/dettagli-cliente']"
+            routerLinkActive="active"
+            >Nuovo Cliente</a
+          >
+        </th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let cliente of clienti; let i = index">
+      <tr>
+        <td>{{ cliente.id }}</td>
+        <td>{{ cliente.ragioneSociale }}</td>
+        <td>{{ cliente.email }}</td>
+        <td>{{ cliente.partitaIva }}</td>
+        <td>
+          <button
+            class="btn btn-info"
+            [routerLink]="['/fatture-cliente', cliente.id]"
+            routerLinkActive="active"
+          >
+            Fatture
+          </button>
+        </td>
+        <td><button class="btn btn-warning" [routerLink]="['/clienti-modifica/', cliente.id]" routerLinkActive="active">Modifica</button></td>
+        <td>
+          <button class="btn btn-danger" (click)="eliminaCliente(cliente.id, i)">
+            Elimina
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <nav aria-label="Page navigation example" class="mt-5 container">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" (click)="precedente()">Precedente</a></li>
+      <li *ngFor="let pag of numP; let p = index" class="page-item"><a class="page-link" (click)="cambiaPag(p)">{{p + 1}}</a></li>
+      <li class="page-item"><a class="page-link" (click)="successivo()">Successivo</a></li>
+    </ul>
+  </nav>
+
+</div>

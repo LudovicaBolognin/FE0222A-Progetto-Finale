@@ -1,0 +1,35 @@
+div.card {
+  background: rgb(255,255,254);
+  background: linear-gradient(0deg, rgba(255,255,254,1) 5%, rgba(255,206,143,1) 48%, rgba(255,167,53,1) 100%);
+  padding: 1.7em;
+  margin: 1.3em;
+  box-shadow: 2px 2px 3px 3px orange;
+  border-radius: 2em;
+}
+
+div.card:hover {
+  box-shadow: 2px 2px 3px 3px white;
+  cursor: pointer;
+}
+
+p img {
+  height: 50%;
+}
+
+img {
+  border-radius: 1em;
+  box-shadow: 2px 2px 2px grey;
+  margin-bottom: 1em;
+}
+
+#mimiTitolo {
+  color: orange;
+}
+
+p a {
+  color: orange;
+}
+
+p a:hover {
+  color: black;
+}

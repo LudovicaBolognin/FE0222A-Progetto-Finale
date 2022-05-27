@@ -1,0 +1,71 @@
+<div class="container my-5 py-5">
+  <h1 class="text-center my-5">Lista fatture</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Id</th>
+        <th scope="col">Data</th>
+        <th scope="col">Numero</th>
+        <th scope="col">Anno</th>
+        <th scope="col">Importo</th>
+        <th scope="col">Stato</th>
+        <th scope="col">Cliente</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let fattura of fatture; let i = index">
+      <tr>
+        <th scope="row">{{ fattura.id }}</th>
+        <td>{{ fattura.data | date }}</td>
+        <td>{{ fattura.numero }}</td>
+        <td>{{ fattura.anno }}</td>
+        <td>{{ fattura.importo }}€</td>
+        <td>{{ fattura.stato.nome }}</td>
+        <td>{{ fattura.cliente.ragioneSociale }}</td>
+        <td>
+          <a
+            class="btn btn-warning"
+            [routerLink]="['/fatture-dettagli/', fattura.id]"
+            routerLinkActive="active"
+            >Modifica</a
+          >
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="elimina(fattura.id, i);">
+            Elimina
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+
+  <nav aria-label="Page navigation example" class="mt-5 container">
+    <ul class="pagination">
+      <li class="page-item">
+        <a class="page-link" (click)="cambiaPag(response.first)">Prima pagina</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="cambiaPag(response.number - 1)"
+          >Precedente</a
+        >
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="cambiaPag(response.number + 1)">Seguente</a>
+      </li>
+      <li class="page-item">
+        <a class="page-link" (click)="cambiaPag(response.totalPages - 1)"
+          >Ultima Pagina</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+ <!--  <nav aria-label="Page navigation example" class="mt-5 container">
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" (click)="precedente()">Precedente</a></li>
+      <li *ngFor="let pag of numP; let p = index" class="page-item"><a class="page-link" (click)="cambiaPag(p)">{{p + 1}}</a></li>
+      <li class="page-item"><a class="page-link" (click)="successivo()">Successivo</a></li>
+    </ul>
+  </nav> -->
+
+</div>

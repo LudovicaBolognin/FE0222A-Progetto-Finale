@@ -1,0 +1,50 @@
+<!-- <p>users works!</p> -->
+<div class="my-5 py-5">
+  <div class="container">
+    <h1 class="text-center my-5">Lista utenti</h1>
+    <div class="row">
+      <div class="col">
+        <table class="table">
+          <thead class="fs-5">
+            <tr>
+              <th scope="col">Username</th>
+              <th scope="col">Email</th>
+              <th scope="col" colspan="2" class="text-center">Ruoli</th>
+            </tr>
+          </thead>
+          <tbody *ngFor="let u of users; let i = index;">
+            <tr>
+              <td>{{ u.username }}</td>
+              <td>{{ u.email }}</td>
+              <td *ngFor="let item of u.roles">
+                {{ item.roleName }}
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- <nav aria-label="...">
+    <ul class="pagination">
+        <li class="page-item">
+            <button (click)="precedente()" [disabled]="paginaCorr==0" class="btn btn-primary">Precedente</button>
+
+        </li>
+        <li class="page-item">
+            <button (click)="successivo()" [disabled]="paginaCorr==pagineTotale - 1" class="btn btn-primary">Successiva</button>
+        </li>
+    </ul>
+  </nav> -->
+
+  <nav aria-label="Page navigation example" class="container">
+    <button class="btn btn-primary mb-5" [routerLink]="'/signup'">Registra un nuovo utente</button>
+    <ul class="pagination">
+      <li class="page-item"><a class="page-link" (click)="precedente()">Precedente</a></li>
+      <li *ngFor="let pag of numP; let p = index" class="page-item"><a class="page-link" (click)="cambiaPag(p)">{{p + 1}}</a></li>
+      <li class="page-item"><a class="page-link" (click)="successivo()">Successivo</a></li>
+    </ul>
+  </nav>
+
+</div>
